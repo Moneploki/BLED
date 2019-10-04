@@ -28,11 +28,11 @@ import fr.bled.R;
 
 public class ManageFragment extends Fragment {
 
-    public ManageViewModel manageViewModel;
-    public LinearLayout mlayout;
-    public int defaultColor;
-    public Button mButton;
-    public ColorPickerDialogBuilder colorPicker;
+    private ManageViewModel manageViewModel;
+    private LinearLayout mlayout;
+    private int defaultColor;
+    private Button mButton;
+    private ColorPickerDialogBuilder colorPicker;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -60,7 +60,7 @@ public class ManageFragment extends Fragment {
         return root;
     }
 
-    public void openColorPicker() {
+    private void openColorPicker() {
         colorPicker = ColorPickerDialogBuilder.with(getContext());
         colorPicker
                 .setTitle("Choose color")

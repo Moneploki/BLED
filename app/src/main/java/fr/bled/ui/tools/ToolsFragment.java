@@ -8,16 +8,21 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+
+import com.flask.colorpicker.ColorPickerView;
+import com.flask.colorpicker.OnColorChangedListener;
 
 import fr.bled.R;
 
 public class ToolsFragment extends Fragment {
 
     private ToolsViewModel toolsViewModel;
-
+    private ColorPickerView colorpicker;
+    private ConstraintLayout mlayout;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         toolsViewModel =
@@ -28,6 +33,14 @@ public class ToolsFragment extends Fragment {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
+            }
+        });
+        colorpicker = (ColorPickerView) root.findViewById(R.id.color_picker_view);
+        mlayout = (ConstraintLayout) root.findViewById(R.id.layoutTools);
+        colorpicker.addOnColorChangedListener(new OnColorChangedListener() {
+            @Override
+            public void onColorChanged(int selectedColor) {
+                mlayout.setBackgroundColor(selectedColor);
             }
         });
         return root;
