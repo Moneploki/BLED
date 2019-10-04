@@ -23,7 +23,7 @@ public class MusicFragment extends Fragment {
         musicViewModel =
                 ViewModelProviders.of(this).get(MusicViewModel.class);
         View root = inflater.inflate(R.layout.fragment_music, container, false);
-        final TextView textView = root.findViewById(R.id.text_mode);
+        final TextView textView = root.findViewById(R.id.text_music);
         musicViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
