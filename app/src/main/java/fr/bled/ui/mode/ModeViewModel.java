@@ -1,16 +1,16 @@
-package fr.bled.ui.share;
+package fr.bled.ui.mode;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ShareViewModel extends ViewModel {
+public class ModeViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ShareViewModel() {
+    public ModeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is share section");
+        mText.setValue("This is mode section");
     }
 
     public LiveData<String> getText() {
