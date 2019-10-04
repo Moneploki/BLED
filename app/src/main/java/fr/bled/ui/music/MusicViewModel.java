@@ -10,7 +10,7 @@ public class MusicViewModel extends ViewModel {
 
     public MusicViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is music section");
+        mText.setValue("This is gallery section");
     }
 
     public LiveData<String> getText() {

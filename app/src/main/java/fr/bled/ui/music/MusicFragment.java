@@ -6,8 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -22,8 +22,8 @@ public class MusicFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         musicViewModel =
                 ViewModelProviders.of(this).get(MusicViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_music, container, false);
-        final TextView textView = root.findViewById(R.id.text_mode);
+        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
+        final TextView textView = root.findViewById(R.id.text_gallery);
         musicViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
