@@ -32,4 +32,5 @@ public class GalleryFragment extends Fragment {
         });
         return root;
     }
+
 }
