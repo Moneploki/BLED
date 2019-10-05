@@ -1,5 +1,6 @@
 package fr.bled.ui.mode;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,15 +23,11 @@ import fr.bled.R;
 
 public class ModeFragment extends Fragment {
 
-    int button_nb = 9-1;
-    int i ;
-
-    private ModeViewModel modeViewModel;
-    private java.lang.String button_name_t [] ={"Blink","Blinkalt","Sparkle","Sparkle 2","Strobo","Cycle colors","Pixel shift left","Pixel shift right","Pixel bounce"};
+    private java.lang.String[] button_name_t = {"Blink", "Blinkalt", "Sparkle", "Sparkle 2", "Strobo", "Cycle colors", "Pixel shift left", "Pixel shift right", "Pixel bounce"};
+    @SuppressLint("ClickableViewAccessibility")
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        modeViewModel =
-                ViewModelProviders.of(this).get(ModeViewModel.class);
+        ModeViewModel modeViewModel = ViewModelProviders.of(this).get(ModeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_mode, container, false);
         final TextView textView = root.findViewById(R.id.text_mode);
         modeViewModel.getText().observe(this, new Observer<String>() {
@@ -50,12 +47,16 @@ public class ModeFragment extends Fragment {
         ImageButton simpleImageButton_7 = root.findViewById(R.id.imageButton8);
         ImageButton simpleImageButton_8 = root.findViewById(R.id.imageButton9);
 
-        ImageButton button_list [] = {simpleImageButton_0, simpleImageButton_1, simpleImageButton_2,simpleImageButton_3, simpleImageButton_4, simpleImageButton_5,simpleImageButton_6, simpleImageButton_7, simpleImageButton_8};
+        ImageButton[] button_list = {simpleImageButton_0, simpleImageButton_1, simpleImageButton_2, simpleImageButton_3, simpleImageButton_4, simpleImageButton_5, simpleImageButton_6, simpleImageButton_7, simpleImageButton_8};
 
-        for (i=0;i<button_nb;i++) {
+        for (int i=0;i<9;i++){
+            button_list[i].setTag(button_name_t[i]);
+        }
+
+        for (final ImageButton button : button_list) {
             // perform click event on button's
 
-            button_list[i].setOnTouchListener(new View.OnTouchListener() {
+            button.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
                     switch (event.getAction()) {
@@ -66,7 +67,7 @@ public class ModeFragment extends Fragment {
                             break;
                         }
                         case MotionEvent.ACTION_UP:
-                            Toast.makeText(getContext(), button_name_t[i], Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), button.getTag().toString(), Toast.LENGTH_LONG).show();
                             // Registrer value
                         case MotionEvent.ACTION_CANCEL: {
 
@@ -82,4 +83,5 @@ public class ModeFragment extends Fragment {
 
         return root;
     }
+
 }
