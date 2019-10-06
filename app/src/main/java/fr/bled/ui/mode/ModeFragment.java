@@ -1,6 +1,7 @@
 package fr.bled.ui.mode;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,6 +19,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import android.content.DialogInterface;
+import android.view.View.OnClickListener;
 
 import fr.bled.R;
 
@@ -74,41 +77,52 @@ public class ModeFragment extends Fragment {
         ImageButton simpleImageButton_32 = root.findViewById(R.id.imageButton33);
 
 
+        final AlertDialog.Builder builder_1=new AlertDialog.Builder(getContext()) .setTitle("Information").setCancelable(true);
 
         final ImageButton[] button_list = {simpleImageButton_0, simpleImageButton_1, simpleImageButton_2, simpleImageButton_3, simpleImageButton_4, simpleImageButton_5, simpleImageButton_6, simpleImageButton_7, simpleImageButton_8,
                 simpleImageButton_9,simpleImageButton_10, simpleImageButton_11, simpleImageButton_12, simpleImageButton_13, simpleImageButton_14, simpleImageButton_15, simpleImageButton_16, simpleImageButton_17, simpleImageButton_18,
                 simpleImageButton_19,simpleImageButton_20, simpleImageButton_21, simpleImageButton_22, simpleImageButton_23, simpleImageButton_24, simpleImageButton_25, simpleImageButton_26, simpleImageButton_27, simpleImageButton_28,
                 simpleImageButton_29, simpleImageButton_30,simpleImageButton_31,simpleImageButton_32};
 
+
         for (int i=0;i<button_list.length;i++){
             button_list[i].setTag(button_name_t[i]);
-            //button_list[i].setBackgroundColor(0xFFB300);
         }
 
         for (final ImageButton button : button_list) {
-            int indice_button_on = 0;
-            // perform click event on button's
 
-            button.setOnTouchListener(new View.OnTouchListener() {
+                button.setOnTouchListener(new View.OnTouchListener() {
+                boolean longClick = false;
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
                     switch (event.getAction()) {
                         case MotionEvent.ACTION_DOWN: {
+                            longClick = false;
                             v.getBackground().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
-                            button.setColorFilter(Color.argb(255,255,255,0));
                             button.invalidate();
                             v.invalidate();
                             break;
                         }
+                        case MotionEvent.ACTION_MOVE:
+                            if (event.getEventTime() - event.getDownTime() > 200 ) {
+                                longClick = true;
+                            }
+                            break;
                         case MotionEvent.ACTION_UP:
-                            Toast.makeText(getContext(), button.getTag().toString(), Toast.LENGTH_LONG).show();
-                            button.setColorFilter(Color.argb(255,255,255,0));
-                            // Registrer value
-
+                            if (longClick) {
+                                builder_1.setMessage(button.getTag().toString() + " effects : Informations are coming ");
+                                builder_1.create();
+                                builder_1.show();
+                            }else {
+                                Toast.makeText(getContext(), button.getTag().toString(), Toast.LENGTH_LONG).show();
+                                button.setColorFilter(Color.argb(255, 255, 255, 0));
+                            }// Registrer value
                         case MotionEvent.ACTION_CANCEL: {
-                              //   button.clearColorFilter();
-                             //    button.invalidate();
-
+                            for (int i=0;i<button_list.length;i++) {
+                                if (button_list[i]!=button){
+                                button_list[i].clearColorFilter();
+                                button_list[i].invalidate();
+                            }}
                             v.getBackground().clearColorFilter();
                             v.invalidate();
                             break;
