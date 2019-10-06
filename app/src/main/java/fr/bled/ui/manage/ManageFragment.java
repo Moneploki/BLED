@@ -20,6 +20,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.flask.colorpicker.ColorPickerView;
+import com.flask.colorpicker.OnColorChangedListener;
 import com.flask.colorpicker.OnColorSelectedListener;
 import com.flask.colorpicker.builder.ColorPickerClickListener;
 import com.flask.colorpicker.builder.ColorPickerDialogBuilder;
@@ -29,10 +30,8 @@ import fr.bled.R;
 public class ManageFragment extends Fragment {
 
     private ManageViewModel manageViewModel;
-    private LinearLayout mlayout;
-    private int defaultColor;
-    private Button mButton;
-    private ColorPickerDialogBuilder colorPicker;
+    private ColorPickerView colorpicker;
+    private ConstraintLayout mlayout;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -48,44 +47,15 @@ public class ManageFragment extends Fragment {
             }
         });
 
-        mlayout = root.findViewById(R.id.layoutManage);
-        defaultColor = getContext().getColor(R.color.colorPrimary);
-        mButton = (Button) root.findViewById(R.id.buttonPickColor);
-        mButton.setOnClickListener(new View.OnClickListener() {
+        colorpicker = (ColorPickerView) root.findViewById(R.id.color_picker_view);
+        mlayout = (ConstraintLayout) root.findViewById(R.id.layoutManage);
+        colorpicker.addOnColorChangedListener(new OnColorChangedListener() {
             @Override
-            public void onClick(View v) {
-            openColorPicker();
+            public void onColorChanged(int selectedColor) {
+                mlayout.setBackgroundColor(selectedColor);
             }
         });
         return root;
     }
 
-    private void openColorPicker() {
-        colorPicker = ColorPickerDialogBuilder.with(getContext());
-        colorPicker
-                .setTitle("Choose color")
-                .initialColor(defaultColor)
-                .wheelType(ColorPickerView.WHEEL_TYPE.FLOWER)
-                .density(12)
-                .setOnColorSelectedListener(new OnColorSelectedListener() {
-                    @Override
-                    public void onColorSelected(int selectedColor) {
-                    }
-                })
-                .setPositiveButton("ok", new ColorPickerClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
-                        defaultColor=selectedColor;
-                        mlayout.setBackgroundColor(selectedColor);
-                        Toast.makeText(getContext(),"onColorSelected: 0x" + Integer.toHexString(selectedColor),Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                })
-                .build()
-                .show();
-    }
 }

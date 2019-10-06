@@ -21,8 +21,6 @@ import fr.bled.R;
 public class ToolsFragment extends Fragment {
 
     private ToolsViewModel toolsViewModel;
-    private ColorPickerView colorpicker;
-    private ConstraintLayout mlayout;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         toolsViewModel =
@@ -35,14 +33,7 @@ public class ToolsFragment extends Fragment {
                 textView.setText(s);
             }
         });
-        colorpicker = (ColorPickerView) root.findViewById(R.id.color_picker_view);
-        mlayout = (ConstraintLayout) root.findViewById(R.id.layoutTools);
-        colorpicker.addOnColorChangedListener(new OnColorChangedListener() {
-            @Override
-            public void onColorChanged(int selectedColor) {
-                mlayout.setBackgroundColor(selectedColor);
-            }
-        });
+
         return root;
     }
 }
