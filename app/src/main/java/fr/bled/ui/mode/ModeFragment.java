@@ -2,6 +2,7 @@ package fr.bled.ui.mode;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -79,6 +80,7 @@ public class ModeFragment extends Fragment {
 
         final AlertDialog.Builder builder_1=new AlertDialog.Builder(getContext()) .setTitle("Information").setCancelable(true);
 
+        final ImageButton[] button_favoris = {simpleImageButton_31,simpleImageButton_32};
         final ImageButton[] button_list = {simpleImageButton_0, simpleImageButton_1, simpleImageButton_2, simpleImageButton_3, simpleImageButton_4, simpleImageButton_5, simpleImageButton_6, simpleImageButton_7, simpleImageButton_8,
                 simpleImageButton_9,simpleImageButton_10, simpleImageButton_11, simpleImageButton_12, simpleImageButton_13, simpleImageButton_14, simpleImageButton_15, simpleImageButton_16, simpleImageButton_17, simpleImageButton_18,
                 simpleImageButton_19,simpleImageButton_20, simpleImageButton_21, simpleImageButton_22, simpleImageButton_23, simpleImageButton_24, simpleImageButton_25, simpleImageButton_26, simpleImageButton_27, simpleImageButton_28,
@@ -110,9 +112,18 @@ public class ModeFragment extends Fragment {
                             break;
                         case MotionEvent.ACTION_UP:
                             if (longClick) {
-                                builder_1.setMessage(button.getTag().toString() + " effects : Informations are coming ");
-                                builder_1.create();
-                                builder_1.show();
+                                builder_1.setMessage(button.getTag().toString() + " effects : Informations are coming ").setPositiveButton("Add to favorite",new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog,int id) {
+                                        Toast.makeText(getContext(), button.getTag().toString() + " effects added to home page", Toast.LENGTH_LONG).show();
+                                        button_favoris[button_favoris.length-1]=button;
+                                    }
+                                }).setNegativeButton("Ok",new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog,int id) {
+                                       dialog.cancel();
+                                    }
+                                });
+                                AlertDialog dialog = builder_1.create();
+                                dialog.show();
                             }else {
                                 Toast.makeText(getContext(), button.getTag().toString(), Toast.LENGTH_LONG).show();
                                 button.setColorFilter(Color.argb(255, 255, 255, 0));
