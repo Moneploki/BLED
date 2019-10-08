@@ -11,6 +11,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import android.graphics.Color;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -24,19 +25,29 @@ import android.view.Menu;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-
+    Boolean led_state = false;
+    String led_status = "Off";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
+        final FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                led_state = ! led_state;
+                led_status = (led_state == true) ?  "On" : "Off";
+                //button.setColorFilter(Color.argb(255, 255, 255, 0));
+
+                if (led_state) {
+                    fab.setColorFilter(Color.argb(255, 255, 255, 0));
+                }else {
+                    fab.clearColorFilter();
+                }
+                    Snackbar.make(view, "Light "+led_status, Snackbar.LENGTH_SHORT)
+                            .setAction("Action", null).show();
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
