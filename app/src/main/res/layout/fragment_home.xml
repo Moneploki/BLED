@@ -2,6 +2,7 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -44,20 +45,20 @@
         <!--Row 0 Favorite Mode(s) -->
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="1000dp"
-            android:layout_weight="2">
+            android:layout_height="800dp"
+            android:layout_weight="1">
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="250dp"
                 android:layout_weight="3">
 
                 <TextView
                     android:id="@+id/textView38"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Fav. effects"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:text="Fav. effects" />
             </ScrollView>
         </TableRow>
         <!--Row 1 DIY color -->
@@ -68,7 +69,7 @@
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="0dp"
                 android:layout_marginBottom="25dp"
                 android:gravity="left"
                 android:text="DIY color"
@@ -132,8 +133,8 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="35dp"
             android:layout_marginBottom="25dp"
             android:gravity="left"
             android:text="Rainbow pattern"
@@ -189,60 +190,160 @@
             android:background="#AB00AB"
             android:gravity="center" />
         </TableRow>
-        <!--Row 3 linear color picker-->
-        <!--Row 4 luminosity -->
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-            <SeekBar
-                android:id="@+id/seekBar"
-                android:layout_width="82dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="-40dp"
-                android:layout_marginBottom="20dp"
-                android:layout_weight="1"
-                app:tickMarkTint="#FFFFFF"
-                android:outlineSpotShadowColor="@color/colorRed"/>
-        </TableRow>
+        <!--Row 8 Origin  -->
 
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-        <!--Row 5 Duration -->
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1">
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Origin"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <SeekBar
+                android:id="@+id/seekBar5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="2dp"
+                android:layout_marginLeft="-100dp"
+                android:layout_weight="1"
+                android:outlineSpotShadowColor="@color/colorRed"
+                app:tickMarkTint="#FFFFFF" />
 
         </TableRow>
+
+        <!--Row 3 linear color picker-->
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TableRow>
+        <!--Row 4 luminosity -->
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-100dp"
+                app:srcCompat="@drawable/ic_home_luminosity_off"
+                tools:ignore="VectorDrawableCompat" />
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="2dp"
+                android:layout_marginLeft="-100dp"
+                android:layout_weight="1"
+                android:outlineSpotShadowColor="@color/colorRed"
+                app:tickMarkTint="#FFFFFF" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_home_luminosity_on"
+                tools:ignore="VectorDrawableCompat" />
+
+        </TableRow>
+
         <!--Row 6 LED numbers -->
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1">
 
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-100dp"
+                app:srcCompat="@drawable/ic_home_expand_less"
+                tools:ignore="VectorDrawableCompat" />
+
+            <SeekBar
+                android:id="@+id/seekBar3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="2dp"
+                android:layout_marginLeft="-100dp"
+                android:layout_weight="1"
+                android:outlineSpotShadowColor="@color/colorRed"
+                app:tickMarkTint="#FFFFFF" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_home_expand_more"
+                tools:ignore="VectorDrawableCompat" />
 
         </TableRow>
+
+        <!--Row 5 Duration -->
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-100dp"
+                app:srcCompat="@drawable/ic_home_speed"
+                tools:ignore="VectorDrawableCompat" />
+
+            <SeekBar
+                android:id="@+id/seekBar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="2dp"
+                android:layout_marginLeft="-100dp"
+                android:layout_weight="1"
+                android:outlineSpotShadowColor="@color/colorRed"
+                app:tickMarkTint="#FFFFFF" />
+
+        </TableRow>
+
         <!--Row 7 Strip spacing  -->
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1">
 
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-100dp"
+                app:srcCompat="@drawable/ic_home_linear_scale"
+                tools:ignore="VectorDrawableCompat" />
+
+            <SeekBar
+                android:id="@+id/seekBar4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="2dp"
+                android:layout_marginLeft="-100dp"
+                android:layout_weight="1"
+                android:outlineSpotShadowColor="@color/colorRed"
+                app:tickMarkTint="#FFFFFF" />
+
 
         </TableRow>
-        <!--Row 8 Origin  -->
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1">
 
-
-        </TableRow>
     </TableLayout>
 
 </RelativeLayout>
