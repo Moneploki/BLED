@@ -6,11 +6,11 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EFEFEF"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="#CECECE">
+    android:paddingBottom="@dimen/activity_vertical_margin">
 
     <TextView
         android:id="@+id/text_home"
@@ -45,7 +45,7 @@
         <!--Row 0 Favorite Mode(s) -->
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="800dp"
+            android:layout_height="750dp"
             android:layout_weight="1">
 
             <ScrollView
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="0dp"
-                android:layout_marginBottom="25dp"
+                android:layout_marginBottom="20dp"
                 android:gravity="left"
                 android:text="DIY color"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -79,6 +79,7 @@
 
             <Button
                 android:id="@+id/button1"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="8dp"
@@ -129,17 +130,18 @@
 
         <!--Row 2 Rainbow pattern-->
         <TableRow>
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="35dp"
-            android:layout_marginBottom="25dp"
-            android:gravity="left"
-            android:text="Rainbow pattern"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="left"
+                android:text="Rainbow pattern"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/button8"
@@ -150,74 +152,48 @@
                 android:background="#FF0000"
                 android:gravity="center" />
 
-        <Button
-            android:id="@+id/button9"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginRight="8dp"
-            android:background="#AB5500"
-            android:gravity="center" />
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="8dp"
+                android:background="#AB5500"
+                android:gravity="center" />
 
-        <Button
-            android:id="@+id/button10"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginRight="8dp"
-            android:background="#00AB55"
-            android:gravity="center" />
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="8dp"
+                android:background="#00AB55"
+                android:gravity="center" />
 
-        <Button
-            android:id="@+id/button11"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginRight="8dp"
-            android:background="#00ACFF"
-            android:gravity="center" />
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="8dp"
+                android:background="#00ACFF"
+                android:gravity="center" />
 
-        <Button
-            android:id="@+id/button12"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginRight="8dp"
-            android:background="#0000FF"
-            android:gravity="center" />
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="8dp"
+                android:background="#0000FF"
+                android:gravity="center" />
 
-        <Button
-            android:id="@+id/button13"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginRight="8dp"
-            android:background="#AB00AB"
-            android:gravity="center" />
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="8dp"
+                android:background="#AB00AB"
+                android:gravity="center" />
         </TableRow>
 
         <!--Row 8 Origin  -->
-
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Origin"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold" />
-
-            <SeekBar
-                android:id="@+id/seekBar5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2dp"
-                android:layout_marginLeft="-100dp"
-                android:layout_weight="1"
-                android:outlineSpotShadowColor="@color/colorRed"
-                app:tickMarkTint="#FFFFFF" />
-
-        </TableRow>
 
         <!--Row 3 linear color picker-->
         <TableRow
@@ -228,19 +204,21 @@
         <!--Row 4 luminosity -->
         <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_marginVertical="-10dp"
+            android:layout_marginBottom="15dp"
             android:layout_weight="1">
 
             <ImageView
                 android:id="@+id/imageView1"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-100dp"
+                android:layout_marginLeft="-115dp"
                 app:srcCompat="@drawable/ic_home_luminosity_off"
                 tools:ignore="VectorDrawableCompat" />
 
             <SeekBar
                 android:id="@+id/seekBar"
+                style="@android:style/Widget.DeviceDefault.Light.SeekBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="2dp"
@@ -268,12 +246,13 @@
                 android:id="@+id/imageView4"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-100dp"
+                android:layout_marginLeft="-115dp"
                 app:srcCompat="@drawable/ic_home_expand_less"
                 tools:ignore="VectorDrawableCompat" />
 
             <SeekBar
                 android:id="@+id/seekBar3"
+                style="@android:style/Widget.DeviceDefault.Light.SeekBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="2dp"
@@ -301,12 +280,13 @@
                 android:id="@+id/imageView3"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-100dp"
+                android:layout_marginLeft="-115dp"
                 app:srcCompat="@drawable/ic_home_speed"
                 tools:ignore="VectorDrawableCompat" />
 
             <SeekBar
                 android:id="@+id/seekBar2"
+                style="@android:style/Widget.DeviceDefault.Light.SeekBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="2dp"
@@ -319,24 +299,26 @@
 
         <!--Row 7 Strip spacing  -->
         <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
 
             <ImageView
                 android:id="@+id/imageView6"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-100dp"
+                android:layout_marginLeft="-115dp"
                 app:srcCompat="@drawable/ic_home_linear_scale"
                 tools:ignore="VectorDrawableCompat" />
 
             <SeekBar
                 android:id="@+id/seekBar4"
-                android:layout_width="wrap_content"
+                style="@android:style/Widget.DeviceDefault.Light.SeekBar"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="2dp"
                 android:layout_marginLeft="-100dp"
+                android:layout_marginRight="40dp"
                 android:layout_weight="1"
                 android:outlineSpotShadowColor="@color/colorRed"
                 app:tickMarkTint="#FFFFFF" />
