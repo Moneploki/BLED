@@ -37,7 +37,9 @@
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_wire_connection"
-                android:title="Wire connexion" />
+                android:iconTint="@color/colorRed"
+                android:title="Wire connexion"
+                />
         </menu>
     </item>
 

@@ -6,7 +6,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EFEFEF"
+    android:background="@drawable/ic_home_gradient"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -45,12 +45,12 @@
         <!--Row 0 Favorite Mode(s) -->
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="750dp"
+            android:layout_height="700dp"
             android:layout_weight="1">
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="200dp"
                 android:layout_weight="3">
 
                 <TextView
@@ -84,7 +84,8 @@
                 android:layout_height="20dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
-                android:background="#FFFFFF"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#FFFFFF"
                 android:gravity="center" />
 
             <Button
@@ -92,7 +93,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="8dp"
-                android:background="#FFFFFF"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#FFFFFF"
                 android:gravity="center" />
 
             <Button
@@ -100,7 +102,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="8dp"
-                android:background="#FFFFFF"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#FFFFFF"
                 android:gravity="center" />
 
             <Button
@@ -108,7 +111,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="8dp"
-                android:background="#FFFFFF"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#FFFFFF"
                 android:gravity="center" />
 
             <Button
@@ -116,7 +120,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="8dp"
-                android:background="#FFFFFF"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#FFFFFF"
                 android:gravity="center" />
 
             <Button
@@ -124,7 +129,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="8dp"
-                android:background="#FFFFFF"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#FFFFFF"
                 android:gravity="center" />
         </TableRow>
 
@@ -149,15 +155,18 @@
                 android:layout_height="20dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
-                android:background="#FF0000"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="@color/colorRed"
                 android:gravity="center" />
 
             <Button
+
                 android:id="@+id/button9"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="8dp"
-                android:background="#AB5500"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#AB5500"
                 android:gravity="center" />
 
             <Button
@@ -165,7 +174,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="8dp"
-                android:background="#00AB55"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#00AB55"
                 android:gravity="center" />
 
             <Button
@@ -173,7 +183,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="8dp"
-                android:background="#00ACFF"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#00ACFF"
                 android:gravity="center" />
 
             <Button
@@ -181,7 +192,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="8dp"
-                android:background="#0000FF"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#0000FF"
                 android:gravity="center" />
 
             <Button
@@ -189,7 +201,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="8dp"
-                android:background="#AB00AB"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#AB00AB"
                 android:gravity="center" />
         </TableRow>
 
@@ -219,10 +232,15 @@
             <SeekBar
                 android:id="@+id/seekBar"
                 style="@android:style/Widget.DeviceDefault.Light.SeekBar"
+
+                android:thumbTint="@color/colorWhite"
                 android:layout_width="wrap_content"
+                android:minHeight="2dp"
+                android:maxHeight="2dp"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="2dp"
                 android:layout_marginLeft="-100dp"
+                android:progressDrawable="@drawable/ic_home_progress_bar_gradient"
                 android:layout_weight="1"
                 android:outlineSpotShadowColor="@color/colorRed"
                 app:tickMarkTint="#FFFFFF" />
@@ -252,10 +270,14 @@
 
             <SeekBar
                 android:id="@+id/seekBar3"
+                android:thumbTint="@color/colorWhite"
+                android:minHeight="2dp"
+                android:maxHeight="2dp"
                 style="@android:style/Widget.DeviceDefault.Light.SeekBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="2dp"
+                android:progressDrawable="@drawable/ic_home_progress_bar_gradient"
                 android:layout_marginLeft="-100dp"
                 android:layout_weight="1"
                 android:outlineSpotShadowColor="@color/colorRed"
@@ -287,12 +309,17 @@
             <SeekBar
                 android:id="@+id/seekBar2"
                 style="@android:style/Widget.DeviceDefault.Light.SeekBar"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="2dp"
                 android:layout_marginLeft="-100dp"
+                android:layout_marginRight="26dp"
+                android:minHeight="2dp"
+                android:maxHeight="2dp"
                 android:layout_weight="1"
-                android:outlineSpotShadowColor="@color/colorRed"
+                android:progressDrawable="@drawable/ic_home_progress_bar_gradient"
+                android:scaleY="1"
+                android:thumbTint="@color/colorWhite"
                 app:tickMarkTint="#FFFFFF" />
 
         </TableRow>
@@ -312,15 +339,20 @@
                 tools:ignore="VectorDrawableCompat" />
 
             <SeekBar
+
                 android:id="@+id/seekBar4"
                 style="@android:style/Widget.DeviceDefault.Light.SeekBar"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="2dp"
                 android:layout_marginLeft="-100dp"
-                android:layout_marginRight="40dp"
+                android:layout_marginRight="26dp"
+                android:minHeight="2dp"
+                android:maxHeight="2dp"
                 android:layout_weight="1"
-                android:outlineSpotShadowColor="@color/colorRed"
+                android:progressDrawable="@drawable/ic_home_progress_bar_gradient"
+                android:scaleY="1"
+                android:thumbTint="@color/colorWhite"
                 app:tickMarkTint="#FFFFFF" />
 
 

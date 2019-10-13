@@ -17,4 +17,18 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="AppTheme.BlueSeekBar" parent="Widget.AppCompat.SeekBar">
+        <item name="colorAccent">@color/colorWhite</item>
+    </style>
+
+    <style name="mySeekBar" parent="Widget.AppCompat.SeekBar">
+        <item name="android:progressDrawable">@drawable/ic_home_progress_bar_gradient</item>
+        <item name="android:thumb">@color/colorWhite</item>
+        <item name="splitTrack">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:paddingStart">16dip</item>
+        <item name="android:paddingEnd">16dip</item>
+        <item name="android:mirrorForRtl">true</item>
+    </style>
+
 </resources>
